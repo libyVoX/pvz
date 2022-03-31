@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute;
+			transition: 0.5s;
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			transition: 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" style="">
+		<img src="zombie5.jfif" style="display: none; transition: 0.5s;" class="reward">
+		<h1 style="color: white; position: absolute; left: 600px; top: 50px"><span class="score">0</span> очков</h1>
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; left: 650px;">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px; left: 650px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px; left: 650px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; left: 650px;">
+		<img class="shooter" src="peashooter.png"  style="top: 650px; left: 650px;">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px; left: 1600px;">
+		<img class="zombies" src="zombie2.png" style="top: 320px; left: 1600px;">
+		<img class="zombies" src="zombie2.png" style="top: 420px; left: 1600px;">
+		<img class="zombies" src="zombie4.png" style="top: 520px; left: 1600px;">
+		<img class="zombies" src="zombie4.png" style="top: 620px; left: 1600px;">
+	</div>
+<script>
+	let span = document.querySelector(".score")
+	let score = 0
+	let rew = document.querySelector(".reward")
+	let zombies = document.querySelectorAll(".zombies")
+	let zombie1_move = 1600
+	let zombie2_move = 1600
+	let zombie3_move = 1600
+	let zombie4_move = 1600
+	let zombie5_move = 1600
+	let peas = document.querySelectorAll(".shooter")
+	zombies[0].onclick = function(){
+		zombie1_move = zombie1_move - 120
+		zombies[0].style.left = zombie1_move + "px"
+		if (zombie1_move == 640){
+			alert("Съел")
+			peas[0].style.display = "none"
+			score = score + 1
+			span.innerHTML = score
+		}
+		if(score == 2){
+			rew.style.display = "block"
+		}
+		if(score == 5){
+			zombies[0].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+	zombies[1].onclick = function(){
+		zombie2_move = zombie2_move - 120
+		zombies[1].style.left = zombie2_move + "px"
+		if (zombie2_move == 640){
+			alert("Съел")
+			peas[1].style.display = "none"
+			score = score + 1
+			span.innerHTML = score
+		}
+		if(score == 2){
+			rew.style.display = "block"
+		}
+		if(score == 5){
+			zombies[0].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+	zombies[2].onclick = function(){
+		zombie3_move = zombie3_move - 120
+		zombies[2].style.left = zombie3_move + "px"
+		if(zombie3_move == 640){
+			alert("Съел")
+			peas[2].style.display = "none"
+			score = score + 1
+			span.innerHTML = score
+		}
+		if(score == 2){
+			rew.style.display = "block"
+		}
+		if(score == 5){
+			zombies[0].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+	zombies[3].onclick = function(){
+		zombie4_move = zombie4_move - 120
+		zombies[3].style.left = zombie4_move + "px"
+		if (zombie4_move == 640){
+			alert("Съел")
+			peas[3].style.display = "none"
+			score = score + 1
+			span.innerHTML = score
+		}
+		if(score == 2){
+			rew.style.display = "block"
+		}
+		if(score == 5){
+			zombies[0].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+	zombies[4].onclick = function(){
+		zombie5_move = zombie5_move - 120
+		zombies[4].style.left = zombie5_move + "px"
+		if (zombie5_move == 640){
+			alert("Съел")
+			peas[4].style.display = "none"
+			score = score + 1
+			span.innerHTML = score
+		}
+		if(score == 2){
+			rew.style.display = "block"
+		}
+		if(score == 5){
+			zombies[0].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+</script>
+</body>
+</html>
